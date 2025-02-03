@@ -199,18 +199,24 @@ export const languages = {
         "win_loss": "Menang Kalah",
         "you_reach_max_win": "Anda mencapai Maksimal Menang"
     },
-    "SeDie": {
-        "bet_option_red2": "2 Merah",
-        "bet_option_red3": "3 Merah",
-        "bet_option_red4": "4 Merah",
-        "bet_option_white3": "1 Merah",
-        "bet_option_white4": "4 Putih",
-        "even_win": "GENAP MENANG",
-        "game_icon_name": "SE DIE",
-        "game_name": "Se Die",
-        "glossary_even": "Genap",
-        "glossary_odd": "Ganjil",
-        "odd_win": "GANJIL MENANG"
+    "DragonTigerFight": {
+        "bet_history_dragon": "(Naga",
+        "bet_history_tiger": "Harimau)",
+        "dragon_win": "Naga menang",
+        "game_icon_name": "Tarung\nNaga Harimau",
+        "game_icon_name_ph": "Tarung \nNaga Harimau",
+        "game_name": "Tarung Naga Harimau",
+        "glossary_blackDragon": "Naga Hitam",
+        "glossary_blackTiger": "Harimau Hitam",
+        "glossary_dragon": "Naga",
+        "glossary_redDragon": "Naga Merah",
+        "glossary_redTiger": "Harimau Merah",
+        "glossary_tie": "Seri",
+        "glossary_tiger": "Harimau",
+        "option_black": "Hitam",
+        "option_red": "Merah",
+        "tie_win": "Permainan seri!",
+        "tiger_win": "Harimau menang"
     }
 };
 

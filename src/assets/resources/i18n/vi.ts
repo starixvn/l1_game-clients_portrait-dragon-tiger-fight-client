@@ -199,18 +199,24 @@ export const languages = {
         "win_loss": "Thắng Thua",
         "you_reach_max_win": "Bạn Đã Đạt Mức Tiền Thắng Tối Đa"
     },
-    "SeDie": {
-        "bet_option_red2": "2 Đỏ",
-        "bet_option_red3": "3 Đỏ",
-        "bet_option_red4": "4 Đỏ",
-        "bet_option_white3": "1 Đỏ",
-        "bet_option_white4": "4 Trắng",
-        "even_win": "CHẴN THẮNG",
-        "game_icon_name": "XÓC ĐĨA",
-        "game_name": "Xóc Đĩa",
-        "glossary_even": "Chẵn",
-        "glossary_odd": "Lẻ",
-        "odd_win": "LẺ THẮNG"
+    "DragonTigerFight": {
+        "bet_history_dragon": "(Rồng",
+        "bet_history_tiger": "Hổ)",
+        "dragon_win": "RỒNG THẮNG",
+        "game_icon_name": "Đại Chiến Rồng Hổ",
+        "game_icon_name_ph": "Đại Chiến \nRồng Hổ",
+        "game_name": "Đại Chiến Rồng Hổ",
+        "glossary_blackDragon": "Rồng Đen",
+        "glossary_blackTiger": "Hổ Đen",
+        "glossary_dragon": "Rồng",
+        "glossary_redDragon": "Rồng Đỏ",
+        "glossary_redTiger": "Hổ Đỏ",
+        "glossary_tie": "Hòa",
+        "glossary_tiger": "Hổ",
+        "option_black": "Đen",
+        "option_red": "Đỏ",
+        "tie_win": "HÒA!",
+        "tiger_win": "HỔ THẮNG"
     }
 };
 

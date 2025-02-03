@@ -199,18 +199,24 @@ export const languages = {
         "win_loss": "赢 输",
         "you_reach_max_win": "您达到了最大胜利"
     },
-    "SeDie": {
-        "bet_option_red2": "2 红",
-        "bet_option_red3": "3 红",
-        "bet_option_red4": "4 红",
-        "bet_option_white3": "1 红",
-        "bet_option_white4": "4 白",
-        "even_win": "双赢",
-        "game_icon_name": "色碟",
-        "game_name": "色碟",
-        "glossary_even": "双",
-        "glossary_odd": "单",
-        "odd_win": "单赢"
+    "DragonTigerFight": {
+        "bet_history_dragon": "(龙",
+        "bet_history_tiger": "虎)",
+        "dragon_win": "龙赢",
+        "game_icon_name": "龙虎斗",
+        "game_icon_name_ph": "龙虎斗",
+        "game_name": "龙虎斗",
+        "glossary_blackDragon": "龙黑",
+        "glossary_blackTiger": "虎黑",
+        "glossary_dragon": "龙",
+        "glossary_redDragon": "龙红",
+        "glossary_redTiger": "虎红",
+        "glossary_tie": "平局",
+        "glossary_tiger": "虎",
+        "option_black": "黑",
+        "option_red": "红",
+        "tie_win": "和局!",
+        "tiger_win": "虎赢"
     }
 };
 

@@ -15,18 +15,17 @@ const defaultConfig: gc.Configs.SiteConfigs = {
     },
     ssl: true,
     subDomain: "l1-proxy1",
-    env: "LOCAL",
+    env: "LOCAL1",
     subGuideDomain: "l1-guide-1",
     SGConnectSubDomain: "connectsite",
     enableMsgpackParserAllGames: false,
     enableMsgpackParserOnNotification: false,
     websocket: {
-        proxyPath: "sedie",
-        route: "sedie",
+        proxyPath: "dragontigerfight",
+        route: "dragontigerfight",
     },
-    mainObserverNamespace: "SeDie",
+    mainObserverNamespace: "DragonTigerFight",
     tolgeeUrl: "",
-    storagePrefixKey: "portrait_sedie",
     backgroundNoTranslate: true,
 };
 

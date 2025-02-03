@@ -199,18 +199,24 @@ export const languages = {
         "win_loss": "Win Loss",
         "you_reach_max_win": "You reached the max win"
     },
-    "SeDie": {
-        "bet_option_red2": "2 Red",
-        "bet_option_red3": "3 Red",
-        "bet_option_red4": "4 Red",
-        "bet_option_white3": "1 Red",
-        "bet_option_white4": "4 White",
-        "even_win": "EVEN WINS",
-        "game_icon_name": "SE DIE",
-        "game_name": "Se Die",
-        "glossary_even": "Even",
-        "glossary_odd": "Odd",
-        "odd_win": "ODD WINS"
+    "DragonTigerFight": {
+        "bet_history_dragon": "(Dragon",
+        "bet_history_tiger": "Tiger)",
+        "dragon_win": "DRAGON WINS",
+        "game_icon_name": "Dragon Tiger Fight",
+        "game_icon_name_ph": "Dragon Tiger \nFight",
+        "game_name": "Dragon Tiger Fight",
+        "glossary_blackDragon": "Black Dragon",
+        "glossary_blackTiger": "Black Tiger",
+        "glossary_dragon": "Dragon",
+        "glossary_redDragon": "Red Dragon",
+        "glossary_redTiger": "Red Tiger",
+        "glossary_tie": "Tie",
+        "glossary_tiger": "Tiger",
+        "option_black": "Black",
+        "option_red": "Red",
+        "tie_win": "TIE!",
+        "tiger_win": "TIGER WINS"
     }
 };
 

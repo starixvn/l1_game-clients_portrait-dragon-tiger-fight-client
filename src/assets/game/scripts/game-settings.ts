@@ -4,18 +4,17 @@ import { LogStore } from "db://shared-components/game/scripts/stores/log-store";
 import { sharedContainer } from "../../scripts/shared-container";
 
 export const settings = {
-    id: 2,
-    name: "SeDie",
-    namespaces: ["SeDie"],
+    id: 67,
+    name: "DragonTigerFight",
+    namespaces: ["DragonTigerFight"],
     durations: {
-        wholeRound: 39,
-        lockingBet: 5,
+        wholeRound: 41,
+        lockingBet: 3,
         placingBet: 30,
-        generatingResult: 1,
-        showingResult: 6,
+        generatingResult: 3,
         startRound: 2,
     },
-    numberOfRoundHistory: 100,
+    numberOfRoundHistory: 102,
 };
 
 export const containerOptions: gc.IContainerOptions = {

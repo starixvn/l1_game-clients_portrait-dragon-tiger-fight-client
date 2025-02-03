@@ -199,18 +199,24 @@ export const languages = {
         "win_loss": "ชนะ แพ้",
         "you_reach_max_win": "คุณถึงยอดชนะสูงสุด"
     },
-    "SeDie": {
-        "bet_option_red2": "2 แดง",
-        "bet_option_red3": "3 แดง",
-        "bet_option_red4": "4 แดง",
-        "bet_option_white3": "1 แดง",
-        "bet_option_white4": "4 ขาว",
-        "even_win": "คู่ชนะ",
-        "game_icon_name": "SE DIE",
-        "game_name": "Se Die",
-        "glossary_even": "คู่",
-        "glossary_odd": "คี่",
-        "odd_win": "คี่ชนะ"
+    "DragonTigerFight": {
+        "bet_history_dragon": "(มังกร",
+        "bet_history_tiger": "เสือ)",
+        "dragon_win": "ดราก้อนชนะ",
+        "game_icon_name": "เสือมังกรไฟท์",
+        "game_icon_name_ph": "เสือมังกรไฟท์",
+        "game_name": "เสือมังกรไฟท์",
+        "glossary_blackDragon": "มังกรดำ",
+        "glossary_blackTiger": "เสือดำ",
+        "glossary_dragon": "มังกร",
+        "glossary_redDragon": "มังกรแดง",
+        "glossary_redTiger": "เสือแดง",
+        "glossary_tie": "เสมอ",
+        "glossary_tiger": "เสือ",
+        "option_black": "ดำ",
+        "option_red": "แดง",
+        "tie_win": "เกมส์เสมอ!",
+        "tiger_win": "ไทเกอร์ชนะ"
     }
 };
 

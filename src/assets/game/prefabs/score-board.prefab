@@ -450,7 +450,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 60.9833984375,
+      "x": 70.017578125,
       "y": -0.04800000000000182,
       "z": 0
     },
@@ -491,7 +491,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 60.9833984375,
+      "width": 70.017578125,
       "height": 63
     },
     "_anchorPoint": {
@@ -527,7 +527,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "EVEN",
+    "_string": "TIGER",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 22,
@@ -588,7 +588,7 @@
     "__prefab": {
       "__id__": 19
     },
-    "key": "SeDie.glossary_even",
+    "key": "DragonTigerFight.glossary_tiger",
     "format": 1,
     "prefix": "",
     "suffix": "",
@@ -675,7 +675,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 75.9833984375,
+      "x": 85.017578125,
       "y": -0.04800000000000182,
       "z": 0
     },
@@ -846,7 +846,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 120.509765625,
+      "width": 129.5439453125,
       "height": 46
     },
     "_anchorPoint": {
@@ -941,7 +941,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 140.509765625,
+      "x": 149.5439453125,
       "y": 0,
       "z": 0
     },
@@ -1000,7 +1000,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 51.068359375,
+      "x": 100.1279296875,
       "y": 0,
       "z": 0
     },
@@ -1041,7 +1041,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 51.068359375,
+      "width": 100.1279296875,
       "height": 63
     },
     "_anchorPoint": {
@@ -1077,7 +1077,7 @@
       "b": 42,
       "a": 255
     },
-    "_string": "ODD",
+    "_string": "DRAGON",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 22,
@@ -1138,7 +1138,7 @@
     "__prefab": {
       "__id__": 45
     },
-    "key": "SeDie.glossary_odd",
+    "key": "DragonTigerFight.glossary_dragon",
     "format": 1,
     "prefix": "",
     "suffix": "",
@@ -1225,7 +1225,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 66.068359375,
+      "x": 115.1279296875,
       "y": 0,
       "z": 0
     },
@@ -1396,7 +1396,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 110.5947265625,
+      "width": 159.654296875,
       "height": 46
     },
     "_anchorPoint": {
@@ -1475,7 +1475,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 251.1044921875,
+      "width": 309.1982421875,
       "height": 100
     },
     "_anchorPoint": {

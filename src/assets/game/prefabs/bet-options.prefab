@@ -13105,7 +13105,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 123.966796875,
+      "width": 202.255859375,
       "height": 90.2
     },
     "_anchorPoint": {
@@ -13141,7 +13141,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "EVEN",
+    "_string": "DRAGON",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 44,
@@ -13202,7 +13202,7 @@
     "__prefab": {
       "__id__": 563
     },
-    "key": "SeDie.glossary_even",
+    "key": "DragonTigerFight.glossary_dragon",
     "format": 1,
     "prefix": "",
     "suffix": "",
@@ -32982,7 +32982,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 102.13671875,
+      "width": 140.03515625,
       "height": 88.2
     },
     "_anchorPoint": {
@@ -33018,7 +33018,7 @@
       "b": 50,
       "a": 255
     },
-    "_string": "ODD",
+    "_string": "TIGER",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 44,
@@ -33079,7 +33079,7 @@
     "__prefab": {
       "__id__": 1452
     },
-    "key": "SeDie.glossary_odd",
+    "key": "DragonTigerFight.glossary_tiger",
     "format": 1,
     "prefix": "",
     "suffix": "",
