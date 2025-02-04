@@ -1,18 +1,19 @@
 import "./../../../resources/i18n";
-
-import gc from "@sg/game-client-base";
-import { _decorator, Node } from "cc";
+import gc, { Translator } from "@sg/game-client-base";
+import { _decorator, Node, sp, tween, Vec3 } from "cc";
 import { AudioContainer } from "db://shared-components/game/audios/scripts/component/audio-container";
 import { ChipFlying } from "db://shared-components/game/chip-flying/scripts/components/chip-flying";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { WinningResult } from "db://shared-components/shared/common-components/winning-result/scripts/winning-result";
 import { startGame } from "db://shared-components/shared/scripts/startup";
-import { FunctionUtils, isIOS } from "db://shared-components/shared/utils";
 import Observer from "observer";
-
 import { siteConfigs } from "../../../scripts/site-configs";
 import { containerOptions, settings } from "../game-settings";
-import { IResult, Plate } from "./plate";
+import { BetChoice } from "./constants";
+import { AnimationUtils } from "db://shared-components/shared/utils";
+import DragonTigerFightCardsContainer from "./dragon-tiger-fight-cards-container";
+
+const { playSpine, fadeOut, fadeIn } = AnimationUtils;
 
 startGame(settings.name, containerOptions, siteConfigs, settings.namespaces);
 const { Rounds, RoundHistories } = gc;
@@ -23,69 +24,69 @@ const { observer, render } = Observer;
 @ccclass
 @observer(settings.name)
 export default class Game extends GameComponent {
-    @property(ChipFlying)
-    chipFlying: ChipFlying = null;
     override namespace = settings.name;
     override containerOptions = containerOptions;
+
+    @property(ChipFlying)
+    chipFlying: ChipFlying = null;
 
     @property(Node)
     nodeAudioContainer: Node = null;
 
-    @property(Node)
-    nodePlate: Node = null;
+    @property({ type: sp.Skeleton })
+    resultSpines: sp.Skeleton[] = [];
 
-    @property(Node)
-    nodeWinning: Node = null;
+    @property({ type: Node })
+    staticMonsters: Node[] = [];
 
-    compPlate: Plate = null;
-    protected enableFixHandleFinish = true;
+    @property(WinningResult)
+    winningResult: WinningResult = null;
+
+    @property(DragonTigerFightCardsContainer)
+    cardsContainer: DragonTigerFightCardsContainer = null;
+
     private audioContainer: AudioContainer = null;
-    private winningResult: WinningResult = null;
-    private soundWinChoice = ["odd", "even"];
-    private currentFinish: gc.GameServiceMessage.Finish = null;
+    private choiceWinningSounds = {
+        dragon: "dragon-growl",
+        tiger: "tiger-growl",
+    };
+    protected enableFixHandleFinish = true;
 
     onLoad() {
-        this.audioContainer = this.nodeAudioContainer.getComponent(AudioContainer);
-        this.compPlate = this.nodePlate.getComponent(Plate);
-        this.winningResult = this.nodeWinning.getComponent(WinningResult);
         super.onLoad();
+        this.audioContainer = this.nodeAudioContainer?.getComponent(AudioContainer);
+        this.cardsContainer?.initCards();
+        this.initResultSpines();
     }
 
-    async showResult(
-        result: gc.GameServiceMessage.TResult,
-        hasAnimation: boolean,
-        settlementResult: gc.GameServiceMessage.TSettlementResult
-    ) {
-        if (result) {
-            this.compPlate.setDots(result as IResult);
-            await this.compPlate.openPlate(hasAnimation);
-            this.winningResult.setSettlementResult(settlementResult);
-            this.winningResult.show();
-
-            const winChoice = this.soundWinChoice.find((choice) => settlementResult[choice]);
-            this.playSound(`${winChoice}_wins_${gc.Translator.getLanguageId()}`);
-        }
-    }
-
-    async renderCurrentFinish(currentFinish: gc.GameServiceMessage.Finish) {
-        this.currentFinish = currentFinish;
-        if (!currentFinish || !this.enableFixHandleFinish) {
-            return;
-        }
-        const { result, settlementResult } = currentFinish as any;
-
-        if (!this.isValidResult(result, settlementResult)) {
-            return;
-        }
-        if (isIOS()) {
-            await FunctionUtils.delay(800);
-        }
-
-        this.showResult(result, true, settlementResult).then(() => {
-            this.finishShowResult(result, settlementResult);
-            this.chipFlying.callActionPayChips();
+    private initResultSpines() {
+        this.resultSpines?.forEach((spine) => {
+            spine.node.active = false;
         });
-        this.playSound(gc.Audios.AudioIds.RECEIVE_FINISH);
+    }
+
+    async finishShowResult(result: gc.GameServiceMessage.TResult, settlementResult: gc.GameServiceMessage.TSettlementResult) {
+        // await this.showResultSpines(settlementResult);
+        const winChoice = this.winningResult.setSettlementResult(settlementResult);
+        // !!winChoice && this.playSound(this.getAudioKeyChoiceWinning(winChoice));
+        await this.winningResult.show();
+        const resultSpineDuration = 1.67;
+        const showWinningResult = 1 + (settlementResult[BetChoice.Tie] ? resultSpineDuration : 0);
+        await AnimationUtils.delayTime(showWinningResult);
+        this.winningResult.hide();
+        super.finishShowResult(result, settlementResult);
+    }
+
+    async showResult(result: gc.GameServiceMessage.TResult, hasAnimation: boolean) {
+        if (result) {
+            this.cardsContainer?.renderResultCards(result);
+
+            if (hasAnimation) {
+                await this.cardsContainer?.openCards();
+            } else {
+                this.cardsContainer?.openCardsWithoutAnim();
+            }
+        }
     }
 
     @render(RoundHistories.RoundHistoryStore, (store) => store.firstJoinGameHistory)
@@ -93,36 +94,68 @@ export default class Game extends GameComponent {
         if (!firstJoinGameHistory) {
             return;
         }
-        const roundTime = firstJoinGameHistory.roundTime;
 
         const lastRound = firstJoinGameHistory.roundHistory as any;
         if (lastRound) {
-            const { result, settlementResult } = lastRound;
-            if (firstJoinGameHistory.animationHighlight) {
-                if (roundTime === 0) {
-                    await FunctionUtils.delay(1000);
-                    if (this.currentFinish) {
-                        return;
-                    }
-                    this.showResult(result, false, settlementResult);
-                } else {
-                    this.showResult(result, false, settlementResult);
-                }
-            }
+            const animated = firstJoinGameHistory.animationHighlight;
+            animated && this.showResult(lastRound?.result, false);
         }
     }
 
     @render(Rounds.RoundTimeStore, (store) => store.roundState)
     fadeVolumeBgMusic(roundState: string) {
         if (roundState === Rounds.ROUND_STATE.LOCKING_BET) {
-            this.audioContainer.updateVolumeMusicSource(0.3, 3);
+            this.audioContainer?.updateVolumeMusicSource(0.3, 3);
         } else if (roundState === Rounds.ROUND_STATE.SHOW_RESULT) {
-            this.audioContainer.updateVolumeMusicSource(1, 3);
+            this.audioContainer?.updateVolumeMusicSource(1, 3);
         }
     }
 
     @render(Rounds.RoundTimeStore, (store) => store.isStartingRound)
     disableWinNotice(isStartingRound: boolean) {
-        isStartingRound && this.winningResult.hideQuickly();
+        isStartingRound && this.winningResult?.hideQuickly();
+    }
+
+    private async showResultSpines(settlementResult: gc.GameServiceMessage.TSettlementResult) {
+        const winChoice = Object.keys(settlementResult).find((choice) => settlementResult[choice]);
+        if (winChoice === BetChoice.Tie) {
+            return;
+        }
+        const spine = this.resultSpines.find((spine) => spine.node.name === winChoice);
+        const staticImage = this.staticMonsters.find((staticMonster) => staticMonster.name === winChoice);
+        if (spine) {
+            fadeOut(staticImage, 0.2);
+            spine.node.active = true;
+            this.playSound(this.choiceWinningSounds[winChoice]);
+            const animationName = winChoice;
+            const duration = spine.findAnimation(animationName).duration;
+            const hidingDuration = 0.2;
+            const scaleNode = spine.node.parent;
+            const originalScale = new Vec3(scaleNode.scale);
+            tween(scaleNode)
+                .delay(duration - hidingDuration)
+                .call(() => {
+                    fadeIn(staticImage, hidingDuration);
+                })
+                .to(hidingDuration, { scale: Vec3.ONE })
+                .start();
+            await playSpine(spine, animationName);
+            spine.node.active = false;
+            scaleNode.scale = originalScale;
+        }
+    }
+
+    private getAudioKeyChoiceWinning(name: string): string {
+        return `${name.toLowerCase()}_${Translator.getLanguageId() || "en"}`;
+    }
+
+    async handleStartRound(isStartRound: boolean) {
+        if (isStartRound) {
+            super.handleStartRound(isStartRound);
+
+            this.cardsContainer?.hideCards();
+            const playSoundDrawCard = () => this.playSound(gc.Audios.AudioIds.DRAW_SINGLE_CARD);
+            await this.cardsContainer?.drawCards(playSoundDrawCard);
+        }
     }
 }

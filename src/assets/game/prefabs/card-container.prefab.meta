@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "44f4ccde-edfa-4cd1-b911-13c05de5ed53",
+  "uuid": "3ad06f6d-090a-45b4-9b1d-96f495a03b9a",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "plate"
+    "syncNodeName": "card-container"
   }
 }

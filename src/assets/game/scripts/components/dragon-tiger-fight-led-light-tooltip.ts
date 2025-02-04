@@ -4,7 +4,7 @@ import { _decorator, Color, Label, Sprite, SpriteFrame } from "cc";
 import { LedLightTooltip } from "db://shared-components/game/led-light/scripts/components/led-light-tooltip";
 import { ComponentUtils } from "db://shared-components/shared/utils";
 import { ServiceCard, convertRank } from "db://shared-components/game/poker-cards/scripts/poker-card";
-import { BetChoice } from "./contants";
+import { BetChoice } from "./constants";
 
 const { ccclass, property } = _decorator;
 
