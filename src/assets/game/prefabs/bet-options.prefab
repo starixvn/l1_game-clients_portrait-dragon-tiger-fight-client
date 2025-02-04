@@ -12222,7 +12222,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "even",
+    "_name": "dragon",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {
@@ -32054,7 +32054,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "odd",
+    "_name": "tiger",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {

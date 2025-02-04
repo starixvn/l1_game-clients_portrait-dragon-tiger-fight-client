@@ -38,7 +38,7 @@
       }
     ],
     "_prefab": {
-      "__id__": 22
+      "__id__": 23
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -412,6 +412,9 @@
       },
       {
         "__id__": 21
+      },
+      {
+        "__id__": 22
       }
     ],
     "_id": ""
@@ -422,7 +425,7 @@
   },
   {
     "__type__": "LedLightItemModel",
-    "choiceNames": "odd",
+    "choiceNames": "dragon",
     "backgroundForChoice": {
       "__uuid__": "825869e5-4edf-4e09-99d7-f5985de43b6b@ea9ba",
       "__expectedType__": "cc.SpriteFrame"
@@ -430,9 +433,17 @@
   },
   {
     "__type__": "LedLightItemModel",
-    "choiceNames": "even",
+    "choiceNames": "tiger",
     "backgroundForChoice": {
       "__uuid__": "825869e5-4edf-4e09-99d7-f5985de43b6b@ead18",
+      "__expectedType__": "cc.SpriteFrame"
+    }
+  },
+  {
+    "__type__": "LedLightItemModel",
+    "choiceNames": "tie",
+    "backgroundForChoice": {
+      "__uuid__": "825869e5-4edf-4e09-99d7-f5985de43b6b@10d11",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
