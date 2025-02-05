@@ -1,15 +1,18 @@
 import gc from "@sg/game-client-base";
-import { _decorator, Component, Node, Vec3 } from "cc";
+import { _decorator, Node, Vec3 } from "cc";
 import { PokerCard, ServiceCard } from "db://shared-components/game/poker-cards/scripts/poker-card";
 import { BetChoice, Choice } from "./constants";
 import { AnimationUtils } from "db://shared-components/shared/utils";
+import Observer from "observer";
+import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
 
 const { movingNode, getPositionAtDestNode } = AnimationUtils;
 
+const { render, handle } = Observer;
 const { ccclass, property } = _decorator;
 
 @ccclass("DragonTigerFightCardsContainer")
-export default class DragonTigerFightCardsContainer extends Component {
+export default class DragonTigerFightCardsContainer extends ObserverComponent {
     @property(PokerCard)
     cards: PokerCard[] = [];
 
@@ -25,7 +28,7 @@ export default class DragonTigerFightCardsContainer extends Component {
         });
     }
 
-    public async drawCards(playSoundDrawCard: Function) {
+    public async drawCards() {
         const cards = this.cards;
         const pullDuration = 0.1;
         const drawDuration = 0.4;
@@ -38,7 +41,7 @@ export default class DragonTigerFightCardsContainer extends Component {
             card.node.position = destPosition;
             await card.pullCard(pullDuration);
             movingNode(card.node, drawDuration, this.originalCardPosition[i]);
-            playSoundDrawCard?.();
+            this.playSoundDrawCard();
             await card.drawCard(drawDuration);
         }
     }
@@ -63,5 +66,18 @@ export default class DragonTigerFightCardsContainer extends Component {
     public openCardsWithoutAnim() {
         this.cards[Choice.Dragon].faceUp();
         this.cards[Choice.Tiger].faceUp();
+    }
+
+    @render(gc.Rounds.RoundTimeStore, (store) => store.isStartRound)
+    handleStartRound(isStartRound: boolean) {
+        if (isStartRound) {
+            this.hideCards();
+            this.drawCards();
+        }
+    }
+
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX(id))
+    playSoundDrawCard() {
+        return gc.Audios.AudioIds.DRAW_SINGLE_CARD;
     }
 }

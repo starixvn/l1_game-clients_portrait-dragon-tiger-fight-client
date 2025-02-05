@@ -1,5 +1,5 @@
 import "./../../../resources/i18n";
-import gc, { Translator } from "@sg/game-client-base";
+import gc from "@sg/game-client-base";
 import { _decorator, Node, sp, tween, Vec3 } from "cc";
 import { AudioContainer } from "db://shared-components/game/audios/scripts/component/audio-container";
 import { ChipFlying } from "db://shared-components/game/chip-flying/scripts/components/chip-flying";
@@ -16,7 +16,7 @@ import DragonTigerFightCardsContainer from "./dragon-tiger-fight-cards-container
 const { playSpine, fadeOut, fadeIn } = AnimationUtils;
 
 startGame(settings.name, containerOptions, siteConfigs, settings.namespaces);
-const { Rounds, RoundHistories } = gc;
+const { Rounds, RoundHistories, Translator } = gc;
 
 const { ccclass, property } = _decorator;
 const { observer, render } = Observer;
@@ -46,7 +46,7 @@ export default class Game extends GameComponent {
     cardsContainer: DragonTigerFightCardsContainer = null;
 
     private audioContainer: AudioContainer = null;
-    private choiceWinningSounds = {
+    private readonly choiceWinningSounds = {
         dragon: "dragon-growl",
         tiger: "tiger-growl",
     };
@@ -57,6 +57,7 @@ export default class Game extends GameComponent {
         this.audioContainer = this.nodeAudioContainer?.getComponent(AudioContainer);
         this.cardsContainer?.initCards();
         this.initResultSpines();
+        this.winningResult?.hideQuickly();
     }
 
     private initResultSpines() {
@@ -66,13 +67,12 @@ export default class Game extends GameComponent {
     }
 
     async finishShowResult(result: gc.GameServiceMessage.TResult, settlementResult: gc.GameServiceMessage.TSettlementResult) {
-        // await this.showResultSpines(settlementResult);
-        const winChoice = this.winningResult.setSettlementResult(settlementResult);
-        // !!winChoice && this.playSound(this.getAudioKeyChoiceWinning(winChoice));
+        await this.showResultSpines(settlementResult);
+        this.playWinningChoiceSound(settlementResult);
         await this.winningResult.show();
         const resultSpineDuration = 1.67;
-        const showWinningResult = 1 + (settlementResult[BetChoice.Tie] ? resultSpineDuration : 0);
-        await AnimationUtils.delayTime(showWinningResult);
+        const showWinningResultDuration = 1 + (settlementResult[BetChoice.Tie] ? resultSpineDuration : 0);
+        await AnimationUtils.delayTime(showWinningResultDuration);
         this.winningResult.hide();
         super.finishShowResult(result, settlementResult);
     }
@@ -102,20 +102,6 @@ export default class Game extends GameComponent {
         }
     }
 
-    @render(Rounds.RoundTimeStore, (store) => store.roundState)
-    fadeVolumeBgMusic(roundState: string) {
-        if (roundState === Rounds.ROUND_STATE.LOCKING_BET) {
-            this.audioContainer?.updateVolumeMusicSource(0.3, 3);
-        } else if (roundState === Rounds.ROUND_STATE.SHOW_RESULT) {
-            this.audioContainer?.updateVolumeMusicSource(1, 3);
-        }
-    }
-
-    @render(Rounds.RoundTimeStore, (store) => store.isStartingRound)
-    disableWinNotice(isStartingRound: boolean) {
-        isStartingRound && this.winningResult?.hideQuickly();
-    }
-
     private async showResultSpines(settlementResult: gc.GameServiceMessage.TSettlementResult) {
         const winChoice = Object.keys(settlementResult).find((choice) => settlementResult[choice]);
         if (winChoice === BetChoice.Tie) {
@@ -124,8 +110,9 @@ export default class Game extends GameComponent {
         const spine = this.resultSpines.find((spine) => spine.node.name === winChoice);
         const staticImage = this.staticMonsters.find((staticMonster) => staticMonster.name === winChoice);
         if (spine) {
-            fadeOut(staticImage, 0.2);
+            staticImage && fadeOut(staticImage, 0.2);
             spine.node.active = true;
+            console.log(this.choiceWinningSounds[winChoice]);
             this.playSound(this.choiceWinningSounds[winChoice]);
             const animationName = winChoice;
             const duration = spine.findAnimation(animationName).duration;
@@ -135,7 +122,7 @@ export default class Game extends GameComponent {
             tween(scaleNode)
                 .delay(duration - hidingDuration)
                 .call(() => {
-                    fadeIn(staticImage, hidingDuration);
+                    staticImage && fadeIn(staticImage, hidingDuration);
                 })
                 .to(hidingDuration, { scale: Vec3.ONE })
                 .start();
@@ -145,17 +132,12 @@ export default class Game extends GameComponent {
         }
     }
 
-    private getAudioKeyChoiceWinning(name: string): string {
-        return `${name.toLowerCase()}_${Translator.getLanguageId() || "en"}`;
+    private playWinningChoiceSound(settlementResult: gc.GameServiceMessage.TSettlementResult) {
+        const winChoice = this.winningResult.setSettlementResult(settlementResult);
+        !!winChoice && this.playSound(this.getAudioKeyChoiceWinning(winChoice));
     }
 
-    async handleStartRound(isStartRound: boolean) {
-        if (isStartRound) {
-            super.handleStartRound(isStartRound);
-
-            this.cardsContainer?.hideCards();
-            const playSoundDrawCard = () => this.playSound(gc.Audios.AudioIds.DRAW_SINGLE_CARD);
-            await this.cardsContainer?.drawCards(playSoundDrawCard);
-        }
+    private getAudioKeyChoiceWinning(name: string): string {
+        return `${name.toLowerCase()}_${Translator.getLanguageId() || "en"}`;
     }
 }
