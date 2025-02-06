@@ -5825,8 +5825,8 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 921,
-      "height": 500
+      "width": 828,
+      "height": 1078
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -5876,23 +5876,23 @@
     "_enabled": true,
     "__prefab": null,
     "prefab": {
-      "__uuid__": "e49e11c0-f54e-4eaf-9d6d-4d6a5b8d030d",
+      "__uuid__": "ede99ac4-504b-4615-a912-597185970fe3",
       "__expectedType__": "cc.Prefab"
     },
     "betdetailSummaryTablePrefab": {
-      "__uuid__": "e1a34d0f-0b3e-49d2-9b7d-22d5ead985d3",
+      "__uuid__": "ff7d9048-70a7-4f5f-a129-5fbb05dee624",
       "__expectedType__": "cc.Prefab"
     },
     "resultContentPrefab": {
-      "__uuid__": "c7d0e2b4-f218-4540-9681-3b5effbbb251",
+      "__uuid__": "407a7c27-b485-475f-b56f-cb475940796e",
       "__expectedType__": "cc.Prefab"
     },
     "betDetailLogTablePrefab": {
-      "__uuid__": "c34e01f8-9585-4b75-8b7e-f517b0e8a111",
+      "__uuid__": "66b9a109-92c4-4cb4-9e36-5269fd47b508",
       "__expectedType__": "cc.Prefab"
     },
     "logDetailItemPrefab": {
-      "__uuid__": "8b537c38-0304-41e8-b82d-b13c9e365140",
+      "__uuid__": "302fb14c-3271-417e-aa87-37ea40b547d3",
       "__expectedType__": "cc.Prefab"
     },
     "_id": "96rdjNdWVOH74LGvcuTxeV"
