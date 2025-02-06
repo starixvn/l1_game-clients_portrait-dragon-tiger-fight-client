@@ -207,10 +207,7 @@
     "propertyPath": [
       "_spriteFrame"
     ],
-    "value": {
-      "__uuid__": "1ab6370d-e970-4e0e-815c-21120561b08c@1a72a",
-      "__expectedType__": "cc.SpriteFrame"
-    }
+    "value": null
   },
   {
     "__type__": "cc.TargetInfo",
@@ -226,10 +223,7 @@
     "propertyPath": [
       "_spriteFrame"
     ],
-    "value": {
-      "__uuid__": "1ab6370d-e970-4e0e-815c-21120561b08c@1a72a",
-      "__expectedType__": "cc.SpriteFrame"
-    }
+    "value": null
   },
   {
     "__type__": "cc.TargetInfo",
