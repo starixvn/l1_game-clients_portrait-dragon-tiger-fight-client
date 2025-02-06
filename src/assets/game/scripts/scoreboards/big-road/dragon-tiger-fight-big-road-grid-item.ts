@@ -8,7 +8,7 @@ import { GridItemSettings } from "db://shared-components/shared/common-component
 const { ccclass } = _decorator;
 
 @ccclass
-export class SeDieBigRoadGridItem<T> extends ScoreboardBigRoadItem<T> {
+export class DragonTigerFightBigRoadGridItem<T> extends ScoreboardBigRoadItem<T> {
     createState(_: GridItemSettings, point?: BigRoadPoint<T>, container?: Node): ScoreboardItemState {
         const converter = container.getComponent(ScoreboardDataConverter);
 
