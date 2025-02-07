@@ -1,0 +1,87 @@
+{
+"skeleton": { "hash": "ba5WXrE68/UkS13KLTMOwpmiYXg", "spine": "3.8.99" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "main-bet-option-highlight", "parent": "root" },
+	{ "name": "main-bet-option-tie-highlight", "parent": "root" }
+],
+"slots": [
+	{ "name": "main-bet-option-highlight", "bone": "main-bet-option-highlight" },
+	{ "name": "main-bet-option-tie-highlight", "bone": "main-bet-option-tie-highlight" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"main-bet-option-highlight": {
+				"main-bet-option-highlight": { "width": 418, "height": 294 }
+			},
+			"main-bet-option-tie-highlight": {
+				"main-bet-option-tie-highlight": { "width": 230, "height": 274 }
+			}
+		}
+	}
+],
+"animations": {
+	"main": {
+		"slots": {
+			"main-bet-option-highlight": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2667, "color": "ffffff9e" },
+					{ "time": 0.5, "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "name": "main-bet-option-highlight" }
+				]
+			},
+			"main-bet-option-tie-highlight": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2667, "color": "ffffff9e" },
+					{ "time": 0.5, "color": "ffffffff" }
+				]
+			}
+		}
+	},
+	"sub": {
+		"slots": {
+			"main-bet-option-highlight": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2667, "color": "ffffff9e" },
+					{ "time": 0.5, "color": "ffffffff" }
+				]
+			},
+			"main-bet-option-tie-highlight": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2667, "color": "ffffff9e" },
+					{ "time": 0.5, "color": "ffffffff" }
+				]
+			}
+		}
+	},
+	"tie": {
+		"slots": {
+			"main-bet-option-highlight": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2667, "color": "ffffff9e" },
+					{ "time": 0.5, "color": "ffffffff" }
+				]
+			},
+			"main-bet-option-tie-highlight": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2667, "color": "ffffff9e" },
+					{ "time": 0.5, "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "name": "main-bet-option-tie-highlight" }
+				]
+			}
+		}
+	}
+}
+}

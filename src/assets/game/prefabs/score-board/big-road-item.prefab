@@ -711,7 +711,7 @@
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 13,
-    "_fontSize": 24,
+    "_fontSize": 28,
     "_fontFamily": "Arial",
     "_lineHeight": 0,
     "_overflow": 0,
@@ -1651,10 +1651,10 @@
     },
     "_alignFlags": 45,
     "_target": null,
-    "_left": 0.05,
-    "_right": 0.05,
-    "_top": 0.05,
-    "_bottom": 0.05,
+    "_left": 0.1,
+    "_right": 0.1,
+    "_top": 0.1,
+    "_bottom": 0.1,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
     "_isAbsLeft": false,
@@ -1860,7 +1860,7 @@
       "__id__": 103
     },
     "image": {
-      "__uuid__": "8fef9c53-58c5-484c-ac20-c888cb9863d0@ea9ba",
+      "__uuid__": "67dacf12-7b8e-4080-8dde-edf91e4625cc@76ef9",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
@@ -1875,7 +1875,7 @@
       "__id__": 105
     },
     "image": {
-      "__uuid__": "8fef9c53-58c5-484c-ac20-c888cb9863d0@ead18",
+      "__uuid__": "67dacf12-7b8e-4080-8dde-edf91e4625cc@4de7d",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
@@ -1890,7 +1890,7 @@
       "__id__": 107
     },
     "image": {
-      "__uuid__": "8fef9c53-58c5-484c-ac20-c888cb9863d0@ead18",
+      "__uuid__": "67dacf12-7b8e-4080-8dde-edf91e4625cc@1bddd",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
@@ -1905,7 +1905,7 @@
       "__id__": 109
     },
     "image": {
-      "__uuid__": "8fef9c53-58c5-484c-ac20-c888cb9863d0@4e15b",
+      "__uuid__": "67dacf12-7b8e-4080-8dde-edf91e4625cc@4e15b",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
@@ -1920,7 +1920,7 @@
       "__id__": 111
     },
     "image": {
-      "__uuid__": "8fef9c53-58c5-484c-ac20-c888cb9863d0@ead18",
+      "__uuid__": "67dacf12-7b8e-4080-8dde-edf91e4625cc@1bddd",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
@@ -1935,7 +1935,7 @@
       "__id__": 113
     },
     "image": {
-      "__uuid__": "8fef9c53-58c5-484c-ac20-c888cb9863d0@ead18",
+      "__uuid__": "67dacf12-7b8e-4080-8dde-edf91e4625cc@1bddd",
       "__expectedType__": "cc.SpriteFrame"
     }
   },

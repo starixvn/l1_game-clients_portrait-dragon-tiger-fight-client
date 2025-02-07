@@ -9,9 +9,9 @@ import { BetChoice } from "./constants";
 const { ccclass, property } = _decorator;
 
 enum ColorResult {
-    dragon = "#0691f2",
-    tiger = "#eba807",
-    tie = "#08c826",
+    dragon = "#0ab8f3",
+    tiger = "#d5a102",
+    tie = "#00bc1e",
 }
 
 @ccclass()
