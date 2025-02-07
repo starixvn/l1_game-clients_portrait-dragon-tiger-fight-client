@@ -427,7 +427,7 @@
     "__type__": "LedLightItemModel",
     "choiceNames": "dragon",
     "backgroundForChoice": {
-      "__uuid__": "825869e5-4edf-4e09-99d7-f5985de43b6b@ea9ba",
+      "__uuid__": "67dacf12-7b8e-4080-8dde-edf91e4625cc@077b7",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
@@ -435,7 +435,7 @@
     "__type__": "LedLightItemModel",
     "choiceNames": "tiger",
     "backgroundForChoice": {
-      "__uuid__": "825869e5-4edf-4e09-99d7-f5985de43b6b@ead18",
+      "__uuid__": "67dacf12-7b8e-4080-8dde-edf91e4625cc@bbcf0",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
@@ -443,7 +443,7 @@
     "__type__": "LedLightItemModel",
     "choiceNames": "tie",
     "backgroundForChoice": {
-      "__uuid__": "825869e5-4edf-4e09-99d7-f5985de43b6b@10d11",
+      "__uuid__": "67dacf12-7b8e-4080-8dde-edf91e4625cc@b8ae2",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
