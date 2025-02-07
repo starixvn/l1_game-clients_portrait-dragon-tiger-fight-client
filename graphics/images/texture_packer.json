@@ -9,7 +9,8 @@
                     "options": {
                         "params": ["--texture-format", "webp"],
                         "sheet_extension": "webp",
-                        "output_path": ["sedie"]
+                        "output_path": ["dragontigerfight"]
+                        
                     }
                 }
             ]
