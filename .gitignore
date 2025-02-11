@@ -13,3 +13,4 @@ graphics/.pack_cache.json
 src/extensions/ccc-skeleton-viewer
 
 .codegpt
+!src/preview-template/dist
