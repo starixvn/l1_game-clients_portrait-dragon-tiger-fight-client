@@ -1,4 +1,6 @@
-import { _decorator, Component, Layout, Node, Sprite, SpriteAtlas, Tween, UITransform, Widget } from "cc";
+import { _decorator, Component, Node, Sprite, SpriteAtlas, UITransform, Widget } from "cc";
+import { CollapsedScoreboardBeadRoad } from "db://direct-shared-components/scoreboard/scripts/collapsed-scoreboard-bead-road";
+import { ScoreboardBeadRoad } from "db://shared-components/game/scoreboards/scripts/components/scoreboard-bead-road";
 
 const { ccclass, property } = _decorator;
 
@@ -10,14 +12,17 @@ export class DragonTigerFightScoreBoard extends Component {
     @property(Node)
     bigRoadWrapper: Node = null;
 
-    @property(Layout)
-    layoutContainer: Layout = null;
-
     @property(SpriteAtlas)
     mainAtlas: SpriteAtlas = null;
 
     @property(Sprite)
     sprChangeModeBeadRoad: Sprite = null;
+
+    @property(ScoreboardBeadRoad)
+    expandedBeadRoad: ScoreboardBeadRoad = null;
+
+    @property(CollapsedScoreboardBeadRoad)
+    collapsedBeadRoad: CollapsedScoreboardBeadRoad = null;
 
     private isExpandBeadRoad = false;
 
@@ -33,11 +38,15 @@ export class DragonTigerFightScoreBoard extends Component {
             this.beadRoadWrapper.getComponent(UITransform).width = this.WIDTH_EXPAND_BEADROAD;
             this.bigRoadWrapper.getComponent(UITransform).width = this.WIDTH_GAME - this.WIDTH_SPACING - this.WIDTH_EXPAND_BEADROAD - 11;
             this.sprChangeModeBeadRoad.spriteFrame = this.mainAtlas.getSpriteFrame("stats-icon-collapse");
+            this.expandedBeadRoad.node.active = true;
+            this.collapsedBeadRoad.node.active = false;
         } else {
             this.beadRoadWrapper.getComponent(UITransform).width = this.WIDTH_COLLAPSE_BEADROAD;
             this.bigRoadWrapper.getComponent(UITransform).width =
                 this.WIDTH_GAME - this.WIDTH_SPACING - this.WIDTH_COLLAPSE_BEADROAD - this.WIDTH_BIG_ROAD_LEFT;
             this.sprChangeModeBeadRoad.spriteFrame = this.mainAtlas.getSpriteFrame("stats-icon-expand");
+            this.expandedBeadRoad.node.active = false;
+            this.collapsedBeadRoad.node.active = true;
         }
         this.bigRoadWrapper.getComponent(Widget).left = this.WIDTH_BIG_ROAD_LEFT;
     }
