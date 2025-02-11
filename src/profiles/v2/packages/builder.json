@@ -42,16 +42,6 @@
               "url": "db://assets/game/splash/splash.scene",
               "uuid": "cdeb5c24-9ba8-4cab-a306-8a562fd04b39",
               "inBundle": false
-            },
-            {
-              "url": "db://shared-components/session-timeout/session-timeout.scene",
-              "uuid": "1b4ca76d-3ce5-41e6-a47c-0fb1f85bb3f4",
-              "inBundle": false
-            },
-            {
-              "url": "db://shared-components/under-maintenance/under-maintenance.scene",
-              "uuid": "3640a00f-a2ed-4aec-b369-779ede63f5df",
-              "inBundle": false
             }
           ],
           "web-desktop": [],
@@ -106,16 +96,6 @@
       {
         "url": "db://assets/game/splash/splash.scene",
         "uuid": "cdeb5c24-9ba8-4cab-a306-8a562fd04b39",
-        "inBundle": false
-      },
-      {
-        "url": "db://shared-components/session-timeout/session-timeout.scene",
-        "uuid": "1b4ca76d-3ce5-41e6-a47c-0fb1f85bb3f4",
-        "inBundle": false
-      },
-      {
-        "url": "db://shared-components/under-maintenance/under-maintenance.scene",
-        "uuid": "3640a00f-a2ed-4aec-b369-779ede63f5df",
         "inBundle": false
       }
     ],
