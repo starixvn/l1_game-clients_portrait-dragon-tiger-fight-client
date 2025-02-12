@@ -112,7 +112,6 @@ export default class Game extends GameComponent {
         if (spine) {
             staticImage && fadeOut(staticImage, 0.2);
             spine.node.active = true;
-            console.log(this.choiceWinningSounds[winChoice]);
             this.playSound(this.choiceWinningSounds[winChoice]);
             const animationName = winChoice;
             const duration = spine.findAnimation(animationName).duration;
