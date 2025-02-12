@@ -75,6 +75,7 @@ export default class Game extends GameComponent {
         await AnimationUtils.delayTime(showWinningResultDuration);
         this.winningResult.hide();
         super.finishShowResult(result, settlementResult);
+        this.chipFlying.callActionPayChips();
     }
 
     async showResult(result: gc.GameServiceMessage.TResult, hasAnimation: boolean) {
