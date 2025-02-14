@@ -5579,7 +5579,7 @@
       "__expectedType__": "cc.Prefab"
     },
     "resultPrefab": {
-      "__uuid__": "c7d0e2b4-f218-4540-9681-3b5effbbb251",
+      "__uuid__": "d4cf1641-44bf-4896-a5c2-c7c19b21fbc3",
       "__expectedType__": "cc.Prefab"
     },
     "_id": "c5N5xovwlAd6L4TYYj7zvq"
@@ -5706,7 +5706,7 @@
       "__expectedType__": "cc.Prefab"
     },
     "resultContentPrefab": {
-      "__uuid__": "c7d0e2b4-f218-4540-9681-3b5effbbb251",
+      "__uuid__": "d4cf1641-44bf-4896-a5c2-c7c19b21fbc3",
       "__expectedType__": "cc.Prefab"
     },
     "betDetailLogTablePrefab": {
