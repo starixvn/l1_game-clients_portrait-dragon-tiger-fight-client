@@ -971,6 +971,8 @@
       "__id__": 24
     },
     "maxItems": 23,
+    "needAlignment": true,
+    "offsetBorderCount": 0,
     "_id": ""
   },
   {

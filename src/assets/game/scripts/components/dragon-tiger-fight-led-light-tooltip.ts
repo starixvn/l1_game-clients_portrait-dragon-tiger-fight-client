@@ -1,7 +1,7 @@
 import gc from "@sg/game-client-base";
 import { _decorator, Color, Label, Sprite, SpriteFrame } from "cc";
 
-import { LedLightTooltip } from "db://shared-components/game/led-light/scripts/components/led-light-tooltip";
+import { LedLightTooltipAlignment } from "db://shared-components/game/led-light/scripts/components/led-light-tooltip-alignment";
 import { ComponentUtils } from "db://shared-components/shared/utils";
 import { ServiceCard, convertRank } from "db://shared-components/game/poker-cards/scripts/poker-card";
 import { BetChoice } from "./constants";
@@ -15,7 +15,7 @@ enum ColorResult {
 }
 
 @ccclass()
-export class DragonTigerFightLedLightToolTip extends LedLightTooltip {
+export class DragonTigerFightLedLightToolTip extends LedLightTooltipAlignment {
     @property(Label)
     lblDragonValue: Label = null;
 
@@ -47,7 +47,7 @@ export class DragonTigerFightLedLightToolTip extends LedLightTooltip {
         this.showTooltip();
     }
 
-    protected findWinningChoice(ledLightInfo: gc.RoundHistories.RoundHistory): string {
+    private findWinningChoice(ledLightInfo: gc.RoundHistories.RoundHistory): string {
         const choices = [BetChoice.Dragon, BetChoice.Tiger, BetChoice.Tie];
         let winChoice = "";
 
@@ -60,7 +60,7 @@ export class DragonTigerFightLedLightToolTip extends LedLightTooltip {
         return winChoice;
     }
 
-    protected showCardInfo(card: ServiceCard, label: Label, sprite: Sprite) {
+    private showCardInfo(card: ServiceCard, label: Label, sprite: Sprite) {
         if (card) {
             const cardRank = convertRank(card.rank);
             label.string = cardRank;
