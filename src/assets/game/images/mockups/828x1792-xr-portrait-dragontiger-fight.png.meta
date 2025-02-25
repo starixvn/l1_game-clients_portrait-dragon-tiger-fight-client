@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "db2fd2d4-fb64-45e4-9b8b-9ba09e62de29",
+  "uuid": "3b281008-be9b-4bf8-b7e9-3e6b554c83f0",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "db2fd2d4-fb64-45e4-9b8b-9ba09e62de29@6c48a",
+      "uuid": "3b281008-be9b-4bf8-b7e9-3e6b554c83f0@6c48a",
       "displayName": "828x1792-xr-portrait-dragontiger-fight",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "db2fd2d4-fb64-45e4-9b8b-9ba09e62de29",
+        "imageUuidOrDatabaseUri": "3b281008-be9b-4bf8-b7e9-3e6b554c83f0",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "db2fd2d4-fb64-45e4-9b8b-9ba09e62de29@f9941",
+      "uuid": "3b281008-be9b-4bf8-b7e9-3e6b554c83f0@f9941",
       "displayName": "828x1792-xr-portrait-dragontiger-fight",
       "id": "f9941",
       "name": "spriteFrame",
@@ -114,7 +114,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "db2fd2d4-fb64-45e4-9b8b-9ba09e62de29@6c48a",
+        "imageUuidOrDatabaseUri": "3b281008-be9b-4bf8-b7e9-3e6b554c83f0@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.12",
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "hasAlpha": true,
     "fixAlphaTransparencyArtifacts": false,
-    "redirect": "db2fd2d4-fb64-45e4-9b8b-9ba09e62de29@6c48a"
+    "redirect": "3b281008-be9b-4bf8-b7e9-3e6b554c83f0@6c48a"
   }
 }
