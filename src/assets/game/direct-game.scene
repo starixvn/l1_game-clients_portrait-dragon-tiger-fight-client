@@ -5906,7 +5906,7 @@
       "betdetailSummaryTablePrefab"
     ],
     "value": {
-      "__uuid__": "eb4a8d4b-7b2b-4b0d-bce6-35ac5e36a7d2",
+      "__uuid__": "06f8e176-207c-4035-8417-7edb1422b220",
       "__expectedType__": "cc.Prefab"
     }
   },
@@ -5938,7 +5938,7 @@
       "betDetailLogTablePrefab"
     ],
     "value": {
-      "__uuid__": "0ed0cb63-ea38-4397-a0c0-b834fa77d570",
+      "__uuid__": "16807509-014c-4d05-b4c4-dc31f4c8ebf7",
       "__expectedType__": "cc.Prefab"
     }
   },
@@ -5951,7 +5951,7 @@
       "logDetailItemPrefab"
     ],
     "value": {
-      "__uuid__": "c889f1fa-c46a-4087-b713-b76c59dfb342",
+      "__uuid__": "aa4bb2c5-bcad-44fa-b6e3-b0edb296f589",
       "__expectedType__": "cc.Prefab"
     }
   },
