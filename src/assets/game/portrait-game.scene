@@ -2941,7 +2941,9 @@
     "chipContainer": {
       "__id__": 131
     },
-    "nodeSlidingChip": null,
+    "nodeSlidingChip": {
+      "__id__": 118
+    },
     "nodeAroundTablePlayers": {
       "__id__": 134
     },
