@@ -27,6 +27,7 @@ const defaultConfig: gc.Configs.SiteConfigs = {
     mainObserverNamespace: "DragonTigerFight",
     tolgeeUrl: "",
     backgroundNoTranslate: true,
+    boostedOddsDelayTimeByMinutes: 1,
 };
 
 let configDev = {
