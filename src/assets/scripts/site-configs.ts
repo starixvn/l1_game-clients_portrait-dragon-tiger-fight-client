@@ -24,9 +24,6 @@ const defaultConfig: gc.Configs.SiteConfigs = {
         proxyPath: "dragontigerfight",
         route: "dragontigerfight",
     },
-    websocketOptions: {
-        timeout: 3000,
-    },
     mainObserverNamespace: "DragonTigerFight",
     tolgeeUrl: "",
     backgroundNoTranslate: true,
