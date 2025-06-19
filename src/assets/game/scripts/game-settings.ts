@@ -6,6 +6,7 @@ import { sharedContainer } from "../../scripts/shared-container";
 export const settings = {
     id: 67,
     name: "DragonTigerFight",
+    observerNamespace: "DragonTigerFight",
     namespaces: ["DragonTigerFight"],
     durations: {
         wholeRound: 41,
