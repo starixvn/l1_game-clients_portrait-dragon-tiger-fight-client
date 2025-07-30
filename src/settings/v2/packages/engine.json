@@ -2,7 +2,8 @@
   "__version__": "1.0.12",
   "modules": {
     "graphics": {
-      "pipeline": "legacy-pipeline"
+      "pipeline": "custom-pipeline",
+      "custom-pipeline-post-process": false
     },
     "configs": {
       "migrationsConfig": {
@@ -181,7 +182,7 @@
           },
           "render-pipeline": {
             "_value": true,
-            "_option": "legacy-pipeline"
+            "_option": "custom-pipeline"
           },
           "custom-pipeline": {
             "_value": true
