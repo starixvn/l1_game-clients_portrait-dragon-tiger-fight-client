@@ -2958,6 +2958,7 @@
     },
     "usingDelayPayChips": false,
     "delayAnimPayChips": 5,
+    "supportChoices": "",
     "_id": "a9notS7qBFnaE7WcvCvMyO"
   },
   {
@@ -4857,7 +4858,7 @@
     "instance": {
       "__id__": 243
     },
-    "targetOverrides": null
+    "targetOverrides": []
   },
   {
     "__type__": "cc.PrefabInstance",
@@ -4973,7 +4974,7 @@
     ],
     "value": {
       "__type__": "cc.Vec3",
-      "x": -165.64499999999998,
+      "x": -148.64499999999998,
       "y": 0,
       "z": 0
     }
@@ -4994,7 +4995,7 @@
     ],
     "value": {
       "__type__": "cc.Size",
-      "width": 242.95999999999998,
+      "width": 215.95999999999998,
       "height": 44
     }
   },
