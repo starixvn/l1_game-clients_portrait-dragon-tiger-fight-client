@@ -26,7 +26,7 @@ export default class BetDetailBodyItem extends BetDetailLogItem {
             this.setHighlightTicketDetail(winningAmount > amount);
         } else {
             const lossAmount =
-                settlementResult[BetChoice.Tie] && (choice == BetChoice.Tiger || choice == BetChoice.Dragon) ? amount / 2 : 0;
+                settlementResult[BetChoice.Tie] && (choice === BetChoice.Tiger || choice === BetChoice.Dragon) ? amount / 2 : 0;
             this.lblWin.string = FormatUtils.numberWithCommas(lossAmount, 2);
         }
     }
