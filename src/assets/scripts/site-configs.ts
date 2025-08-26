@@ -24,7 +24,6 @@ const defaultConfig: gc.Configs.SiteConfigs = {
         proxyPath: "dragontigerfight",
         route: "dragontigerfight",
     },
-    mainObserverNamespace: "DragonTigerFight",
     tolgeeUrl: "",
     backgroundNoTranslate: true,
 };

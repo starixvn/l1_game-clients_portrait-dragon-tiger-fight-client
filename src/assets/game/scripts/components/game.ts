@@ -8,7 +8,8 @@ import { WinningResult } from "db://shared-components/shared/common-components/w
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
 import { siteConfigs } from "../../../scripts/site-configs";
-import { containerOptions, settings } from "../game-settings";
+import { settings } from "../game-settings";
+import { containerOptions } from "../containerOptions";
 import { BetChoice } from "./constants";
 import { AnimationUtils } from "db://shared-components/shared/utils";
 import DragonTigerFightCardsContainer from "./dragon-tiger-fight-cards-container";
