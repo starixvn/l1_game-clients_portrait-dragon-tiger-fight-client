@@ -10,4 +10,5 @@ window.envConfig = {
     subDirectory: "uat",
     SGConnectSubDomain: "l1uatconnectsite",
     backgroundNoTranslate: true,
+    clientSubDomain: "hduatclient",
 };

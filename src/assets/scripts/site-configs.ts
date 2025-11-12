@@ -27,6 +27,12 @@ const defaultConfig: gc.Configs.SiteConfigs = {
     mainObserverNamespace: "DragonTigerFight",
     tolgeeUrl: "",
     backgroundNoTranslate: true,
+    sentry: {
+        dsn: "",
+        browserUrl: "",
+        urlHash: "",
+        ignoreErrors: [],
+    },
 };
 
 let configDev = {
