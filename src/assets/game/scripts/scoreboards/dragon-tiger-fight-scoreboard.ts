@@ -51,7 +51,7 @@ export class DragonTigerFightScoreBoard extends Component {
         this.bigRoadWrapper.getComponent(Widget).left = this.WIDTH_BIG_ROAD_LEFT;
     }
     onClickBigRoadWrapper () {
-        if(this.isExpandBeadRoad == false){
+        if(this.isExpandBeadRoad === false){
             return
         }else{
             this.onClickExpandMode();

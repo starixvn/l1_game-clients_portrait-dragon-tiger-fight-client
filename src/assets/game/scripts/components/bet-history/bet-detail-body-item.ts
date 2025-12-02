@@ -5,6 +5,7 @@ import BetDetailLogItem, {
     BetDetailLogItemType,
     GameRoundBetDetailsLog,
 } from "db://shared-components/game/bet-history/scripts/components/bet-detail/bet-detail-log-item";
+import { formatCurrencyWithConfig } from "db://shared-components/shared/utils";
 
 const { ccclass } = _decorator;
 const { FormatUtils } = gc;
@@ -22,12 +23,12 @@ export default class BetDetailBodyItem extends BetDetailLogItem {
         if (settlementResult[choice]) {
             const effectiveOdds = freeBet ? odd - 1 : odd;
             const winningAmount = amount * effectiveOdds;
-            this.lblWin.string = FormatUtils.numberWithCommas(winningAmount, 2);
+            this.lblWin.string = formatCurrencyWithConfig(winningAmount);
             this.setHighlightTicketDetail(winningAmount > amount);
         } else {
             const lossAmount =
-                settlementResult[BetChoice.Tie] && (choice == BetChoice.Tiger || choice == BetChoice.Dragon) ? amount / 2 : 0;
-            this.lblWin.string = FormatUtils.numberWithCommas(lossAmount, 2);
+                settlementResult[BetChoice.Tie] && (choice === BetChoice.Tiger || choice === BetChoice.Dragon) ? amount / 2 : 0;
+            this.lblWin.string = formatCurrencyWithConfig(lossAmount);
         }
     }
 }
