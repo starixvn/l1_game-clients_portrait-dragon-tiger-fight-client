@@ -10,4 +10,5 @@ window.envConfig = {
     subDirectory: "sit",
     SGConnectSubDomain: "l1sitconnectsite",
     backgroundNoTranslate: true,
+    decimalPlaces: 4,
 };

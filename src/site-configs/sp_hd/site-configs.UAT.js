@@ -11,4 +11,5 @@ window.envConfig = {
     SGConnectSubDomain: "l1uatconnectsite",
     backgroundNoTranslate: true,
     clientSubDomain: "hduatclient",
+    decimalPlaces: 4,
 };

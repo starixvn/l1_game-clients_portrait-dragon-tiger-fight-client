@@ -8,4 +8,5 @@ window.envConfig = {
     enableMsgpackParserOnNotification: false,
     enableMsgpackParserAllGames: false,
     backgroundNoTranslate: true,
+    decimalPlaces: 4,
 };

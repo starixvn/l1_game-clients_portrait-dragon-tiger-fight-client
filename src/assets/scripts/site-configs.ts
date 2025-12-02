@@ -24,7 +24,6 @@ const defaultConfig: gc.Configs.SiteConfigs = {
         proxyPath: "dragontigerfight",
         route: "dragontigerfight",
     },
-    mainObserverNamespace: "DragonTigerFight",
     tolgeeUrl: "",
     backgroundNoTranslate: true,
     sentry: {
@@ -33,6 +32,7 @@ const defaultConfig: gc.Configs.SiteConfigs = {
         urlHash: "",
         ignoreErrors: [],
     },
+    decimalPlaces: 4,
 };
 
 let configDev = {
